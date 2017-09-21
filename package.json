@@ -1,0 +1,30 @@
+{
+  "name": "mean_angular2_example1",
+  "version": "1.0.0",
+  "description": "\"# MEAN_Angular2_Example1\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/him017/MEAN_Angular2_Example1.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Stack",
+    "Angular",
+    "2",
+    "Application"
+  ],
+  "author": "hg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/him017/MEAN_Angular2_Example1/issues"
+  },
+  "homepage": "https://github.com/him017/MEAN_Angular2_Example1#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.12"
+  }
+}
