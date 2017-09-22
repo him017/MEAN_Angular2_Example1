@@ -3,22 +3,37 @@ import { NgModule }             from '@angular/core';
 import { HomeComponent }        from './components/home/home.component';
 import { DashboardComponent }   from './components/dashboard/dashboard.component';
 import { RegisterComponent }    from './components/register/register.component';
+import { LoginComponent }       from './components/login/login.component';
+import { ProfileComponent }     from './components/profile/profile.component';
+import { AuthGuard }            from './guards/auth.guard';
+import { NotAuthGuard }         from './guards/notAuth.guard';
 
 const appRoutes: Routes = [
   { 
      path: '', 
-     component: HomeComponent 
+     component: HomeComponent // Default Route
   },
   {
     path:'dashboard',
-    component :  DashboardComponent
+    component :  DashboardComponent,
+    canActivate: [AuthGuard] // User must be logged in to view this route
   },
   {
     path:'register',
-    component :  RegisterComponent
+    component :  RegisterComponent,
+    canActivate: [NotAuthGuard] // User must NOT be logged in to view this route
   },
-  
-  { path: '**', component: HomeComponent }
+  {
+    path:'login',
+    component :  LoginComponent,
+    canActivate: [NotAuthGuard] // User must NOT be logged in to view this route
+  },
+  {
+    path:'profile',
+    component :  ProfileComponent,
+    canActivate: [AuthGuard] // User must be logged in to view this route
+  },
+  { path: '**', component: HomeComponent } // "Catch-All" Routes
 ];
 
 @NgModule({

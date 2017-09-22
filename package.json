@@ -24,10 +24,12 @@
   },
   "homepage": "https://github.com/him017/MEAN_Angular2_Example1#readme",
   "dependencies": {
+    "angular2-flash-messages": "^1.0.8",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.1",
     "cors": "^2.8.4",
     "express": "^4.15.4",
+    "jsonwebtoken": "^8.0.1",
     "mongoose": "^4.11.12"
   }
 }
