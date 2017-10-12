@@ -9,8 +9,10 @@ const path     = require('path'); //NodeJS Package for file paths
 const myClientDir   = '/client/dist/';
 const myClientIndexFileName = 'index.html';
 const myFrontEndDomain      = 'http://localhost:4200';
+const port = process.env.PORT || 8080;
 
 const authentication     = require('./routes/authentication')(router); // Import Authentication Routes
+const blogs              = require('./routes/blogs')(router); // Import Authentication Routes
 
 
 mongoose.Promise = global.Promise;
@@ -30,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));// parse application/x-www-f
 app.use(bodyParser.json());  // parse application/json
 app.use(express.static(__dirname + myClientDir));//Provide static directory for frontend
 app.use('/authentication', authentication); // Use Authentication routes in application
+app.use('/blogs', blogs); // Use blog routes in application
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + myClientDir + myClientIndexFileName))
@@ -42,6 +45,6 @@ app.get('/', (req, res) => {
 });
 */
 
-app.listen(8080, () => {
-    console.log('Listening on port 8080');
+app.listen(port, () => {
+    console.log('Listening on port:' + port);
 });

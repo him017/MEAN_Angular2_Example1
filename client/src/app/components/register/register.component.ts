@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  form: FormGroup; //exporting a form of FormGroup type
+  form;
   usernameValid;
   emailValid;
   processing = false;
